@@ -43,18 +43,14 @@ describe("Second task - add 3 new tests", () => {
   test("Blog", async () => {
     await page.goto("https://github.blog");
     const title = await page.title();
-    expect(title).toContain(
-      "The GitHub Blog - Updates, ideas, and inspiration from GitHub to help developers build and design software."
-    );
+    expect(title).toContain("The GitHub Blog - Updates, ideas, and inspiration from GitHub to help developers build and design software.");
   });
 
   test("Text under h1", async () => {
     await page.goto("https://github.com/features/security");
     const h2Span = await "h2 span.color-fg-default";
     const h2SpanText = await page.$eval(h2Span, (el) => el.textContent);
-    expect(h2SpanText).toEqual(
-      "Ship secure applications within the GitHub flow"
-    );
+    expect(h2SpanText).toEqual("Ship secure applications within the GitHub flow");
   });
 
   test("Check Pricing page", async () => {
