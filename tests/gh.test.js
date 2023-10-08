@@ -5,11 +5,10 @@ beforeEach(async () => {
   await page.goto("https://github.com/team");
 });
 
-afterEach(() => {
+describe("Github page tests", () => {
+  afterEach(() => {
   page.close();
 });
-
-describe("Github page tests", () => {
   test("The h1 header content'", async () => {
     const firstLink = await page.$("header div div a");
     await firstLink.click();
